@@ -29,7 +29,7 @@ templates = Jinja2Templates(directory="static")
 
 @app.get('/')
 async def main(request: Request):
-    return templates.TemplateResponse("/code/app/static/index.html", {"request": request})
+    return templates.TemplateResponse("code/app/static/index.html", {"request": request})
 
 @app.get('/binance/test/connection/{key}/{secret}')
 def auth_get_all_blog_users(key: str, secret: str):
