@@ -29,7 +29,7 @@ templates = Jinja2Templates(directory="static")
 
 @app.get('/')
 async def main(request: Request):
-    return templates.TemplateResponse("code/app/static/index.html", {"request": request})
+    return templates.TemplateResponse("index.html", {"request": request})
 
 @app.get('/binance/test/connection/{key}/{secret}')
 def auth_get_all_blog_users(key: str, secret: str):
@@ -41,7 +41,7 @@ async def binance_account(api_key: str, secret: str):
     client = RequestClient(api_key=api_key, secret_key=secret)
     result = client.get_account_information()
     capital, asset_1, asset_2 = Get_Capital(result, "USDT")
-    return  capital, asset_1, asset_2
+    return capital, asset_1, asset_2
 
 # @app.get('/binance/candle')
 # async def binance_candle(request: Request):
