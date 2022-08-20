@@ -5,8 +5,8 @@ WORKDIR /.
 
 # 
 COPY ./requirements.txt ./requirements.txt
-COPY ./static ./static
-COPY ./templates ./templates
+COPY ./static /static
+COPY ./templates /templates
 # 
 RUN pip install  --upgrade -r ./requirements.txt
 
