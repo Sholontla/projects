@@ -1,17 +1,17 @@
 FROM python:3.9
 
 # 
-WORKDIR /code
+WORKDIR /.
 
 # 
-COPY ./requirements.txt /code/requirements.txt
+COPY ./requirements.txt ./requirements.txt
 
 # 
-RUN pip install  --upgrade -r /code/requirements.txt
+RUN pip install  --upgrade -r ./requirements.txt
 
 # 
-COPY . /code/app
+COPY . .
 
 # 
-CMD ["/code/app/main.py"]
+CMD ["main.py"]
 ENTRYPOINT ["python"]

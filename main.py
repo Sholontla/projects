@@ -18,9 +18,9 @@ from pathlib import Path
 
 
 app = FastAPI(
-    title = "Test Biance Service ....",
-    description = "Binance Futures",
-    version = "v0.1",
+    title = "Ricardo Fuentes Testing Binance ....",
+    description = "Ricardo Fuentes / Binance Futures",
+    version = "v0.2",
 )       
 script_dir = os.path.dirname(__file__)
 st_abs_file_path = os.path.join(script_dir, "static/")
@@ -29,7 +29,7 @@ templates = Jinja2Templates(directory="static")
 
 @app.get('/')
 async def main(request: Request):
-    return templates.TemplateResponse("code/app/static/index.html", {"request": request})
+    return templates.TemplateResponse("index.html", {"request": request})
 
 @app.get('/binance/test/connection/{key}/{secret}')
 def auth_get_all_blog_users(key: str, secret: str):
