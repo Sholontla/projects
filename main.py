@@ -1,20 +1,10 @@
 import os
-import re
 import uvicorn
-from fastapi import FastAPI, Request, Form
-from fastapi.responses import HTMLResponse
+from fastapi import FastAPI, Request
 from binance.cm_futures import CMFutures
 from fastapi.templating import Jinja2Templates
-from fastapi.staticfiles import StaticFiles
-
-#from config import api_key, secret
+from starlette.staticfiles import StaticFiles
 from uitils import *
-
-from pathlib import Path
-
-# BASE_DIR = Path(__file__).resolve().parent
-# dir = directory=str(Path(BASE_DIR, 'static'))
-#templates = Jinja2Templates(directory=str(Path(BASE_DIR, 'static')))
 
 
 app = FastAPI(
